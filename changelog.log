@@ -1,0 +1,16 @@
+Friday October 18, 2019
+=======================
+-- implemented the following
+	-- input retrieve
+	-- gender
+	-- height
+	-- weight
+	-- BF (FFMI) (todo)
+	-- BMI
+	-- Lifting stats (bencho only)
+-- to implement
+	-- skeleton
+	-- direction of datatypes, and objects
+	-- new users, retrieve old user data
+	-- other calculations that have not been specified based on
+	fitnessAppFlowDesign.pdf
