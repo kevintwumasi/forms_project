@@ -6,12 +6,12 @@ public class trackfitness
 	private double stringtest;
 
 	// class constructors
-	public trackfitness(person currentPerson) {
-		targetperson = currentPerson;
+	public trackfitness() {
+		;
 	}
 	// message functions
-	public void messageSM() {
-		System.out.println("Test Track Fitness Menu the world" + getvalue1());
+	public static void messageSM() {
+		System.out.println("Test Track Fitness Menu the world " + getvalue1());
 	}
 
 	// sub menu loop
@@ -21,8 +21,8 @@ public class trackfitness
 	}
 
 	// get methods
-	public int getvalue1() {
-		return targetperson.getvalue1();
+	public static int getvalue1() {
+		return 1;
 	}
 	// set methods	
 }

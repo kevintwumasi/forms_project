@@ -14,3 +14,9 @@ Friday October 18, 2019
 	-- new users, retrieve old user data
 	-- other calculations that have not been specified based on
 	fitnessAppFlowDesign.pdf
+	-- standardize by imperial
+	-- change from procedural to functional
+	-- maybe have a menu class to deal with repetitions
+	-- start a small documentation
+	-- split the StrengthStandard to smaller classes
+	-- menu, exercises (for inheritenece)

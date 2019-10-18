@@ -5,7 +5,7 @@ public class viewinsights
 	private double stringtest;
 
 	// class constructors
-	public viewinsights(person currentPerson) {
+	public viewinsights() {
 		;
 	}
 	// message functions

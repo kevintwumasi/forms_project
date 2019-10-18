@@ -1,9 +1,10 @@
 public class homescreen
 {
 	// init classes
-	private person thisperson = new person();
-	private trackfitness mainTrack = new trackfitness(thisperson);
-	private viewinsights mainInsights = new viewinsights(thisperson);
+	//private thisperson = new person();
+	private static trackfitness mainTrack = new trackfitness();
+	private static viewinsights mainInsights = new viewinsights();
+	private int menuSize = 2;
 
 	// message functions
 	private static void messageWelcome() {
