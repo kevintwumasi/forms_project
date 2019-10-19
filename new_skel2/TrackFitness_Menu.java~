@@ -1,0 +1,10 @@
+public class TrackFitness_Menu extends Menu
+{
+	//final static private String MenuTitle = "This is the Track Fitness Menu";
+	//final static private String MenuContents = "(1) to Track Weight" + "\n" + // transform this to an array later...
+		//"(2) to Track Lifts";
+	//final static private int MenuRange = 2;
+	public TrackFitness_Menu() {
+		//SetMenuAll(MenuTitle, MenuContents, MenuRange);
+	}
+}
