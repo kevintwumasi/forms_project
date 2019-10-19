@@ -84,7 +84,7 @@ public class Menu
 				}
 			} catch (java.util.InputMismatchException e) {
 				MessageInvalidEntry();
-				selection.nextInt();
+				selection.nextLine();
 			}
 		}
 	}

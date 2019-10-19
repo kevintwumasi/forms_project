@@ -74,10 +74,9 @@ public class Menu
 	private int ScannerMenu() {
 		Scanner selection = new Scanner(System.in);
 		while (true) {
-			int choice = -1;
 			GetMenu();
 			try {
-				choice = selection.nextInt();
+				int choice = selection.nextInt();
 				if (ScannerMenu_DetSize(choice)) {
 					//System.out.println("You chose " + choice);
 					return choice;
