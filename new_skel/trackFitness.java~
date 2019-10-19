@@ -1,0 +1,17 @@
+public class trackFitness
+{
+	final static String contentsMenu = "This is the trackFitness Menu";
+	final static int menuRange = 4;
+	Menu submenu = new Menu();
+	// constructor
+	public trackFitness() {
+		;
+	}
+	public static void main(String[] args){
+		//Menu submenu = new Menu();
+		submenu.setContents(contentsMenu);
+		submenu.setmenuRange(menuRange);
+		submenu.getContents();
+	}
+
+}
