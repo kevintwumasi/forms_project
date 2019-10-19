@@ -10,6 +10,7 @@ public class Menu
 	}
 	public void SetMenuContents(ArrayList<String> NewMenuContents) {
 		this.MenuContents = NewMenuContents;
+		this.MenuContents.add(0, "to quit the current menu.");
 	}
 	public void SetMenuRange() {
 		this.MenuRange = this.MenuContents.size();
@@ -20,8 +21,12 @@ public class Menu
 	}
 	private String GetMenuContents() {
 		String ArrayStringed = "";
-		for (String i : MenuContents) {
-			ArrayStringed += i + "\n";
+		int i;
+		SetMenuRange();
+		for (i = 0; i < GetMenuRange(); i++) {
+			ArrayStringed += "(" + i  + ") " +
+				this.MenuContents.get(i) +
+				"\n";
 		}
 		return ArrayStringed;
 	}
@@ -39,10 +44,11 @@ public class Menu
 		SetMenuContents(b);
 	}
 	public void GetMenu() { // induces formatting
-		String returnString = GetMenuTitle() + "\n" +
-			GetMenuContents() + ": ";
+		String returnString = 
+			GetMenuTitle() + "\n" +
+			GetMenuContents() + "> ";
 		System.out.println(returnString);
 	}
-	// menu loop
+	// select loop
 	// TO DO LATER
 }
