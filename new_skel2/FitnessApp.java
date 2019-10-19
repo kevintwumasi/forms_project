@@ -1,16 +1,22 @@
 public class FitnessApp
 {
 	public static void main(String[] args) {
-		FitnessApp_Menu AppMenu = new FitnessApp_Menu();
-		TrackFitness_Menu TrackMenu = new TrackFitness_Menu();
-		FitnessDashboard_Menu DashboardMenu = new FitnessDashboard_Menu();
+		// init data structs
 		Data FitnessData = new Data();
-		DashboardMenu.GetMenu();
-		AppMenu.GetMenu();
-		FitnessData.GetMenu();
-		//AppMenu.GetMenu();
-		//FitnessData.GetData_Input_Legend();
-		//FitnessData.GetData_Input();
-		//FitnessData.SetData_Input();
+		FitnessApp_Menu AppMenu = new FitnessApp_Menu(FitnessData);
+		TrackFitness_Menu TrackMenu = new TrackFitness_Menu(FitnessData);
+		FitnessDashboard_Menu DashboardMenu = new FitnessDashboard_Menu(FitnessData);
+		// main menu
+		int choice = -1;
+		while (choice != 0) {
+			choice = AppMenu.SelectMenu();
+			switch (choice) {
+				case 1:	TrackMenu.SelectSubMenu();
+					break;
+				case 2:	DashboardMenu.SelectSubMenu();
+					break;
+			}
+		}
+		System.out.println("Goodbye...");
 	}
 }

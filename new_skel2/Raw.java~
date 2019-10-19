@@ -1,0 +1,6 @@
+public class Raw<T>
+{
+	public class Raw<T>() {
+
+	};
+}

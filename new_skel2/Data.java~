@@ -7,19 +7,10 @@ public class Data extends Menu
 	private double nullVal = -1.0;
 	// double values only
 	private ArrayList<Double> Data_Input = new ArrayList<Double>();
-	//private ArrayList<Data_Struct> Data_Output = new ArrayList<Data_Struct>();
-
-	// legend
-	// input:	0 Gender	1 Height
-	// 2 Weight	3 BF %		4 Activity
 	private ArrayList<String> Data_Input_Legend = new ArrayList<String>();
-	// output:	5 Steps		6 Resting BPM
-	// 7 Lifts	8 Bench		9 Deadlift
 
 	// initialize data
 	public Data() {
-		Data_Input_Legend.add("(Cancel)");
-		Data_Input_Legend.add("Gender");
 		Data_Input_Legend.add("Height");
 		Data_Input_Legend.add("Weight");
 		Data_Input_Legend.add("BF %");
@@ -29,85 +20,74 @@ public class Data extends Menu
 		Data_Input_Legend.add("Lifts");
 		Data_Input_Legend.add("Bench");
 		Data_Input_Legend.add("Deadlift");
-		Data_Input_Legend.add("Squat");
-		/*
-		String TempString = "";
-		for (String i : Data_Input_Legend) {
-			TempString += i + "\n";
-		}
-		System.out.println(TempString);
-		*/
-		int i;
-		for (i = 0; i < Data_Input_Legend.size(); i++) {
-			Data_Input.add(i, nullVal);
-			//System.out.println("Added " + Data_Input_Legend.get(i) +
-			//		" with " + Data_Input.get(i));
-		}
+		Data_Input_Legend.add("Squat");	
 		SetMenuAll(MenuTitle, Data_Input_Legend);
-	}
-
-	// wrapper methods
-	private boolean Data_Input_DetSize(int choice) {
-		if ( choice >= 0 && choice < Data_Input_Legend.size()
-				&& Data_Input_Legend.size() == 
-				Data_Input.size() ) {
-			return true;
-		} else if (Data_Input_Legend.size() != Data_Input.size()) {
-			System.out.println("System error! Check the code for" + 
-					" any bugs!");
-			return false; // add break out of the program entirely
-		} else {
-			return false;
+		int i;
+		for (i = 0; i < GetMenuRange() ; i++) {
+			Data_Input.add(i, nullVal);
 		}
 	}
-	private boolean Data_Input_Signed(double testvalue) {
-		if (testvalue >= 0) {
-			return true;
-		} else {
-			System.out.println("This system only accepts values in doubles.");
-			return false;
-		}
-	}
-
-	// get methods
-	public void GetData_Input_Legend() {
-		GetMenu();
-	}
-
 	public double GetData_Input() {
-		Scanner selection = new Scanner(System.in);
-		while (true) {
-			int choice = selection.nextInt();
-			if ( Data_Input_DetSize(choice) ) {
-				//System.out.println("You chose " + choice);
-				return Data_Input.get(choice);
-			} else {
-				System.out.println("Invalid selection. Try again.");
-			}
-
+		int choice = SelectMenu();
+		if (SelectMenu_0(choice)) {
+			System.out.println(Data_Input.get(choice) + " was extracted from " + choice);
+			return Data_Input.get(choice);
+		} else {
+			return nullVal;
 		}
 	}
 
-	// set methods
-	public void SetData_Input() {
-		Scanner selection = new Scanner(System.in);
+	public String GetAllData_Input() {
+		String ArrayStringed = "";
+		int i;
+		for (i = 1; i < GetMenuRange(); i++) {
+			ArrayStringed += "(" + i + ") " +
+				this.Data_Input_Legend.get(i) +
+				"\t" +
+				this.Data_Input.get(i) + "\n";
+		}
+		return ArrayStringed;
+	}
+		
+	// set data methods
+	private boolean SetData_Signed(double newValue) {
+		if (newValue > 0.0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	private boolean SetData(double newValue, int choice) {
+		if (SetData_Signed(newValue)) {
+			Data_Input.set(choice, newValue);
+			System.out.println("You put " +
+				newValue + " in " +
+				Data_Input_Legend.get(choice));
+			return true;
+		} else {
+			return MessageInvalidChoice();
+		}
+	}
+
+	private void SetData_Scanner(int choice) {
 		Scanner newData = new Scanner(System.in);
 		while (true) {
-			System.out.println("Enter an option to set");
-			int choice = selection.nextInt();
-			if (Data_Input_DetSize(choice)) {
-				double newValue = newData.nextDouble();
-				if (Data_Input_Signed(newValue)) {
-					Data_Input.set(choice, newValue);
-					System.out.println("You put " +
-							newValue + " in " +
-							Data_Input_Legend.get(choice)
-							);
-					break;
-				}
-			} else {
-				System.out.println("Invalid selection. Try again.");
+			System.out.println("Enter the new value for " +
+				Data_Input_Legend.get(choice) + 
+				" which currently has a value of " + 
+				Data_Input.get(choice) + ".");
+			double newValue = newData.nextDouble();
+			if (SetData(newValue, choice)) {
+				break;
 			}
+		}
+	}
+
+	public void SetData_Input() {
+		int choice = SelectMenu();
+		if (SelectMenu_0(choice)) {
+			SetData_Scanner(choice);
 		}
 	}
 }
