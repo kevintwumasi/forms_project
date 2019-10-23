@@ -3,9 +3,10 @@ public class FitnessApp
 	public static void main(String[] args) {
 		// init data structs
 		Data FitnessData = new Data();
-		FitnessApp_Menu AppMenu = new FitnessApp_Menu(FitnessData);
-		TrackFitness_Menu TrackMenu = new TrackFitness_Menu(FitnessData);
-		FitnessDashboard_Menu DashboardMenu = new FitnessDashboard_Menu(FitnessData);
+		Data_Date FitnessData_Date = new Data_Date();
+		FitnessApp_Menu AppMenu = new FitnessApp_Menu(FitnessData, FitnessData_Date);
+		TrackFitness_Menu TrackMenu = new TrackFitness_Menu(FitnessData, FitnessData_Date);
+		FitnessDashboard_Menu DashboardMenu = new FitnessDashboard_Menu(FitnessData, FitnessData_Date);
 		// main menu
 		int choice = -1;
 		while (choice != 0) {

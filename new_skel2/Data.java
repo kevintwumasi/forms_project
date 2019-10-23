@@ -5,6 +5,7 @@ public class Data extends Menu
 {
 	final static private String MenuTitle = "This is the Data Input Area";
 	private double nullVal = -1.0;
+	//private Data_Date WeightData = new Data_Date();
 	// double values only
 	private ArrayList<Double> Data_Input = new ArrayList<Double>();
 	private ArrayList<String> Data_Input_Legend = new ArrayList<String>();
@@ -46,7 +47,7 @@ public class Data extends Menu
 			ArrayStringed += "(" + i + ") " +
 				this.Data_Input_Legend.get(i) +
 				"\t" +
-				this.Data_Input.get(i) + "\n";
+				this.GetData_Input(i) + "\n";
 		}
 		System.out.println(ArrayStringed);
 		return ArrayStringed;
@@ -67,7 +68,11 @@ public class Data extends Menu
 			System.out.println("You put " +
 				newValue + " in " +
 				Data_Input_Legend.get(choice));
+			if (Data_Input_Legend.get(choice).equals("Weight") {
+				;
+			}
 			return true;
+			
 		} else {
 			return MessageInvalidChoice();
 		}

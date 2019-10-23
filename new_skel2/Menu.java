@@ -5,14 +5,20 @@ public class Menu
 	private String MenuTitle = "DEFAULT TITLE";
 	private ArrayList<String> MenuContents = new ArrayList<String>();
 	private int MenuRange = this.MenuContents.size();
+	private int modLock = 0;
 	// set methods
 	private void SetMenuTitle(String NewMenuTitle) {
 		this.MenuTitle = NewMenuTitle;
 	}
 	private void SetMenuContents(ArrayList<String> NewMenuContents) {
+		System.out.println("Refreshing menu...\n");
 		this.MenuContents = NewMenuContents;
-		this.MenuContents.add(0, "to quit the current menu.");
+		if (modLock == 0) {
+			this.MenuContents.add(0, "to quit the current menu.");
+			modLock = 1;
+		}
 		SetMenuRange();
+		System.out.println("Menu has been refreshed...\n");
 	}
 	private void SetMenuRange() {
 		this.MenuRange = this.MenuContents.size();
@@ -92,6 +98,7 @@ public class Menu
 		if (choice != 0) {
 			return true;
 		} else {
+			System.out.println("Cancelling Operation...");
 			return false;
 		}
 	}
@@ -101,5 +108,9 @@ public class Menu
 			//clearScreen();
 			return ScannerMenu();
 		}
+	}
+	// debug
+	public void pdb() {
+		System.out.println("Debugging...");
 	}
 }

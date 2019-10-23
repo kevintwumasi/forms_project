@@ -5,12 +5,14 @@ public class TrackFitness_Data extends Menu
 	final static private String MenuTitle = "This is the Data Entry Editor";
 	private ArrayList<String> MenuContents = new ArrayList<String>();
 	private Data LocalFitnessData = new Data();
-	public TrackFitness_Data(Data FitnessData) {
+	private Data_Date LocalFitnessData_Date = new Data_Date();
+	public TrackFitness_Data(Data FitnessData, Data_Date FitnessData_Date) {
 		MenuContents.add("Check one of your stats");
 		MenuContents.add("Check all your stats");
 		MenuContents.add("Edit an entry");
 		SetMenuAll(MenuTitle, MenuContents);
 		Data LocalFitnessData = FitnessData;
+		Data_Date LocalFitnessData_Date = FitnessData_Date;
 	}
 
 	public void SelectSubMenu() {
