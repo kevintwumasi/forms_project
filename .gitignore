@@ -1,0 +1,7 @@
+*.*
+*
+!.gitignore
+!*.jar
+!*.java
+!*.pdf
+!Makefile
