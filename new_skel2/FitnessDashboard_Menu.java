@@ -10,11 +10,11 @@ public class FitnessDashboard_Menu extends Menu
 		MenuContents.add("for Exercise Recommendations");
 		SetMenuAll(MenuTitle, MenuContents);
 		LocalFitnessData = FitnessData;
-		Data_Date LocalFitnessData_Date = FitnessData_Date;
+		LocalFitnessData_Date = FitnessData_Date;
 	}
 	public void SelectSubMenu() {
 		int choice = -1;
-		TrackFitness_Data MenuData = new TrackFitness_Data(LocalFitnessData);
+		TrackFitness_Data MenuData = new TrackFitness_Data(LocalFitnessData, LocalFitnessData_Date);
 		while (choice != 0) {
 			choice = SelectMenu();
 			switch (choice) {

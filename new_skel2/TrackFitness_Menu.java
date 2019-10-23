@@ -20,7 +20,7 @@ public class TrackFitness_Menu extends Menu
 		while (choice != 0) {
 			choice = SelectMenu();
 			switch (choice){
-				case 1: TrackFitness_TrackWeight;
+				case 1: ;
 				case 2:	;
 			}
 		}

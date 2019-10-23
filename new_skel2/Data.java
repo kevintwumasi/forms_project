@@ -47,7 +47,7 @@ public class Data extends Menu
 			ArrayStringed += "(" + i + ") " +
 				this.Data_Input_Legend.get(i) +
 				"\t" +
-				this.GetData_Input(i) + "\n";
+				this.Data_Input.get(i) + "\n";
 		}
 		System.out.println(ArrayStringed);
 		return ArrayStringed;
@@ -68,7 +68,7 @@ public class Data extends Menu
 			System.out.println("You put " +
 				newValue + " in " +
 				Data_Input_Legend.get(choice));
-			if (Data_Input_Legend.get(choice).equals("Weight") {
+			if (Data_Input_Legend.get(choice).equals("Weight")) {
 				;
 			}
 			return true;
