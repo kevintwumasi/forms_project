@@ -17,10 +17,11 @@ public class TrackFitness_Menu extends Menu
 	// main submenu
 	public void SelectSubMenu() {
 		int choice = -1;
+		TrackWeight_Menu TrackWeight = new TrackWeight_Menu(LocalFitnessData, LocalFitnessData_Date);
 		while (choice != 0) {
 			choice = SelectMenu();
 			switch (choice){
-				case 1: ;
+				case 1: TrackWeight.SelectSubMenu();
 				case 2:	;
 			}
 		}
