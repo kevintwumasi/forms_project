@@ -1,0 +1,7 @@
+public class User
+{
+	Info User_Current;
+	public User() {
+		;
+	}
+}
