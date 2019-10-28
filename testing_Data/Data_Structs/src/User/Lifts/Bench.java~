@@ -1,0 +1,6 @@
+public class Bench extends Lifts
+{
+	public Bench(int entry, int weight) {
+		super("Benches", entry, weight);
+	}
+}
