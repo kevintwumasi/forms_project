@@ -4,7 +4,7 @@ abstract class Lifts extends Data_Int
 	public Lifts(String Type, int entry, double weight) {
 		super(Type, "reps.");
 		SetData_Entry(entry);
-		SetLifts_Weight(weight);
+		this.weight = new Weight(weight);
 	}
 	// get methods
 	public double GetLifts_Weight() {

@@ -1,6 +1,6 @@
 public class Gender extends Data_String
 {
-	public Gender(String entry) {
+	public Gender(int entry) {
 		super("Gender");
 		SetData_Entry(entry);
 	}

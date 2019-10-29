@@ -27,9 +27,9 @@ public class UserData
 	// other
 	private boolean User_New = false;
 	// constructors
-	public UserData() {
-		;
-	}
+	//public UserData() {
+	//	;
+	//}
 	// get methods
 	public int GetData_Entry(Data_Int o) {
 		return o.GetData_Entry();
