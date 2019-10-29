@@ -1,105 +1,77 @@
 import java.util.ArrayList;
-public class UserData
+public class UserData 
 {
-	// default value
-	private int DInt = -1;
-	private double DDouble = -1.0;
-	private String DString = "";
-	// Data_Int
-	private Steps i1 = new Steps(DInt);
-	private Resting_BPM i2 = new Resting_BPM(DInt);
-	private Data[] ListData_Int = {i1, i2};
-	// Data_Double
-	private Height d1 = new Height(DDouble);
-	private Weight d2 = new Weight(DDouble);
-	private BF d3 = new BF(DDouble);
-	private Activity_Level d4 = new Activity_Level(DDouble);
-	private Data[] ListData_Double = {d1, d2, d3, d4}; 
-	// Data_Lifts
-	private Benches l1 = new Benches(DInt, DDouble);
-	private Deadlifts l2 = new Deadlifts(DInt, DDouble);
-	private Squats l3 = new Squats(DInt, DDouble);
-	private Data[] ListData_Lifts = {l1, l2, l3};
-	// Data_String
-	private Info s1 = new Info(DString);
-	private Gender s2 = new Gender(DString);
-	private Data[] ListData_String = {s1, s2};
+	// SInt
+	private Steps i1 = new Steps();
+	private Resting_BPM i2 = new Resting_BPM();
+	private Struct[] List_Int = {i1, i2};
+	// SDouble
+	private Height d1 = new Height();
+	private Weight d2 = new Weight();
+	private BF d3 = new BF();
+	private Activity_Level d4 = new Activity_Level();
+	private Struct[] List_Double = {d1, d2, d3, d4};
+	// Lifts
+	private Benches l1 = new Benches();
+	private Deadlifts l2 = new Deadlifts();
+	private Squats l3 = new Squats();
+	private Struct[] List_Lifts = {l1, l2, l3};
+	// SString
+	private Info s1 = new Info();
+	private Gender s2 = new Gender();
+	private Struct[] List_String = {s1, s2};
 	// other
-	private boolean User_New = false;
-	// constructors
+	private boolean UserNew = false;
+	// data array
+	private ArrayList<Struct> ArrayData = new ArrayList<Struct>();
+	// constructor
 	public UserData() {
-		;
+		Init_Data();
 	}
 	// get methods
-	public int GetData_Entry(Data_Int o) {
-		return o.GetData_Entry();
+	public ArrayList<Struct> GetData() {
+		return this.ArrayData;
 	}
-
-	public double GetData_Entry(Data_Double o) {
-		return o.GetData_Entry();
+	public Struct GetData_Var(int choice) {
+		return this.GetData().get(choice);
 	}
-
-	public String GetData_Entry(Data_String o) {
-		return o.GetData_Entry();
+	// local level
+	public Object GetData_Entry(int choice) {
+		return this.GetData_Var(choice).GetEntry();
 	}
-
-	public double GetLifts_Weight(Lifts o) {
-		return o.GetLifts_Weight();
+	public String GetData_Type(int choice) {
+		return this.GetData_Var(choice).GetType();
 	}
-
-	public int GetLifts_Entry(Lifts o) {
-		return GetData_Entry(o);
-	}
-
-	public ArrayList<String> GetUserData_List() {
+	public String GetData_Units(int choice) {
+		return this.GetData_Var(choice).GetUnits();
+	}	
+	//
+	public ArrayList<String> GetData_List() {
 		ArrayList<String> temp = new ArrayList<String>();
-		for (Data o : ListData_Int) {
-			temp.add(o.GetData_Type());
-		}
-		for (Data o : ListData_Double) {
-			temp.add(o.GetData_Type());
-		}
-		for (Data o : ListData_Lifts) {
-			temp.add(o.GetData_Type());
-		}
-		for (Data o : ListData_String) {
-			temp.add(o.GetData_Type());
+		for (Struct o : GetData()) {
+			temp.add(o.GetType());
 		}
 		return temp;
 	}
-
-	public ArrayList<Data> GetUserData() {
-		ArrayList<Data> temp = new ArrayList<Data>();
-		for (Data o : ListData_Int) {
-			temp.add(o);
-		}
-		for (Data o : ListData_Double) {
-			temp.add(o);
-		}
-		for (Data o : ListData_Lifts) {
-			temp.add(o);
-		}
-		for (Data o : ListData_String) {
-			temp.add(o);
-		}
-		return temp;
-	}
-
+	
 	// set methods
-	public void SetData_Entry(Data_Int o, int Data_Entry) {
-		o.SetData_Entry(Data_Entry);
+	public void SetEntry(int choice) {
+		GetData().get(choice).SetEntry();
 	}
-
-	public void SetData_Entry(Data_Double o, double Data_Entry) {
-		o.SetData_Entry(Data_Entry);
+	// init methods
+	public void Init_Data() {
+		for (Struct o : List_Int) {
+			this.ArrayData.add(o);
+		} 
+		for (Struct o : List_Double) {
+			this.ArrayData.add(o);
+		} 
+		for (Struct o : List_Lifts) {
+			this.ArrayData.add(o);
+		} 
+		for (Struct o : List_String) {
+			this.ArrayData.add(o);
+		}
 	}
-
-	public void SetData_Entry(Data_String o, String Data_Entry) {
-		o.SetData_Entry(Data_Entry);
-	}
-
-	public void SetLifts_Weight(Lifts o, double weight) {
-		o.SetLifts_Weight(weight);
-	}
-	// data filters 
 }
+

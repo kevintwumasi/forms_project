@@ -1,7 +1,9 @@
-public class Resting_BPM extends Data_Int
+public class Resting_BPM extends SInt
 {
-	public Resting_BPM(int entry) {
+	public Resting_BPM(){
 		super("Resting BPM", "BPM");
-		SetData_Entry(entry);
+	}
+	public Resting_BPM(int o){
+		super(o, "Resting BPM", "BPM");
 	}
 }

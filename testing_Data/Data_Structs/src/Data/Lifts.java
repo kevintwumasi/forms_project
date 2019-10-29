@@ -1,20 +1,27 @@
-abstract class Lifts extends Data_Int
+abstract class Lifts extends SInt
 {
-	private Weight weight = new Weight(0.0);
-	public Lifts(String Type, int entry, double weight) {
+	Weight weight;
+	public Lifts(String Type) {
 		super(Type, "reps.");
-		SetData_Entry(entry);
-		SetLifts_Weight(weight);
+		weight = new Weight();
 	}
-	// get methods
-	public double GetLifts_Weight() {
-		return weight.GetData_Entry();
+	public Lifts(int o, String Type) {
+		super(o, Type, "reps.");
+		weight = new Weight();
 	}
-	public String GetLifts_Units() {
-		return weight.GetData_Units();
+	public Lifts(int o, double p, String Type) {
+		super(o, Type, "reps.");
+		weight = new Weight(p);
 	}
-	// set methods
-	public void SetLifts_Weight(double weight) {
-		this.weight.SetData_Entry(weight);
+	// get weight
+	public double GetWeight() {
+		return (double) weight.GetEntry();
+	}
+	public String GetWeightUnits() {
+		return (String) weight.GetUnits();
+	}
+	// set weight
+	protected void SetWeight() {
+		weight.SetEntry();
 	}
 }

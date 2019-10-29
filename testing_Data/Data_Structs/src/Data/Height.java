@@ -1,7 +1,9 @@
-public class Height extends Data_Double
+public class Height extends SDouble
 {
-	public Height(double entry) {
+	public Height() {
 		super("Height", "ft.");
-		SetData_Entry(entry);
+	}
+	public Height(double o) {
+		super(o, "Height", "ft.");
 	}
 }

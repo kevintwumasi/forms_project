@@ -1,7 +1,9 @@
-public class Steps extends Data_Int
+public class Steps extends SInt
 {
-	public Steps(int entry) {
-		super("Steps");
-		SetData_Entry(entry);
+	public Steps(){
+		super("Steps", "steps");
+	}
+	public Steps(int o){
+		super(o, "Steps", "steps");
 	}
 }

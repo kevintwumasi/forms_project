@@ -1,7 +1,9 @@
-public class Activity_Level extends Data_Double
+public class Activity_Level extends SDouble
 {
-	public Activity_Level(double entry) {
-		super("Activity Level");
-		SetData_Entry(entry);
+	public Activity_Level() {
+		super("Activity Level", "");
+	}
+	public Activity_Level(double o) {
+		super(o, "Activity Level", "");
 	}
 }

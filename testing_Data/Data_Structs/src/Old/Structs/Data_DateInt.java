@@ -1,16 +1,17 @@
 import java.util.ArrayList;
-public class Data_DateString extends Data_Date
+public class Data_DateInt extends Data_Date
 {
-	private ArrayList<String> EntryArray = new ArrayList<String>();
+	private ArrayList<Integer> EntryArray = new ArrayList<Integer>();
 	// constructor
-	public Data_DateString(String Type) {
+	public Data_DateInt(String Type) {
 		super(Type);
 	}
-	public Data_DateString(String Type, String Units) {
+
+	public Data_DateInt(String Type, String Units) {
 		super(Type, Units);
 	}
 	// get methods
-	public String GetData_Entry(int choice) {
+	public int GetData_Entry(int choice) {
 		return this.EntryArray.get(choice);
 	}
 
@@ -27,7 +28,7 @@ public class Data_DateString extends Data_Date
 		return ArrayStringed;
 	}
 	// set methods
-	public void SetData_Entry(String Data_Entry) {
+	public void SetData_Entry(int Data_Entry) {
 		this.EntryArray.add(Data_Entry);
 		SetData_DateEntry();
 	}

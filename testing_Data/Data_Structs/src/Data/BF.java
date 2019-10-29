@@ -1,7 +1,9 @@
-public class BF extends Data_Double
+public class BF extends SDouble
 {
-	public BF(double entry) {
-		super("BF%", "%");
-		SetData_Entry(entry);
+	public BF() {
+		super("Body Fat", "%");
+	}
+	public BF(double o) {
+		super(o, "Body Fat", "%");
 	}
 }

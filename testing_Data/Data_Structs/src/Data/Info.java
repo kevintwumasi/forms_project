@@ -1,8 +1,9 @@
-public class Info extends Data_String
+public class Info extends SString
 {
-	public Info(String Name) {
-		super("User");
-		SetData_Entry(Name);
+	public Info() {
+		super("Info", "");
+	}
+	public Info(String o) {
+		super(o, "Info", "");
 	}
 }
-

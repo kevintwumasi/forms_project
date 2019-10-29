@@ -1,8 +1,9 @@
-public class Gender extends Data_String
+public class Gender extends SString
 {
-	public Gender(String entry) {
-		super("Gender");
-		SetData_Entry(entry);
+	public Gender() {
+		super("Gender", "");
+	}
+	public Gender(String o) {
+		super(o, "Gender", "");
 	}
 }
-

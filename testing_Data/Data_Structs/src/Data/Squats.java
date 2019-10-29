@@ -1,6 +1,12 @@
 public class Squats extends Lifts
 {
-	public Squats(int entry, double weight) {
-		super("Squats", entry, weight);
+	public Squats() {
+		super("Squats");
+	}
+	public Squats(int o) {
+		super(o, "Squats");
+	}
+	public Squats(int o, double p) {
+		super(o, p, "Squats");
 	}
 }

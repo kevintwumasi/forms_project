@@ -1,4 +1,4 @@
-public class Home extends Menu
+public class Home extends Menu_Abstract
 {
 	private Menu_Entry Track_Fitness = new Menu_Entry("Track Fitness");
 	private Menu_Entry View_Insights = new Menu_Entry("View Insights");

@@ -1,6 +1,12 @@
 public class Benches extends Lifts
 {
-	public Benches(int entry, double weight) {
-		super("Benches", entry, weight);
+	public Benches() {
+		super("Benches");
+	}
+	public Benches(int o) {
+		super(o, "Benches");
+	}
+	public Benches(int o, double p) {
+		super(o, p, "Benches");
 	}
 }

@@ -1,7 +1,9 @@
-public class Weight extends Data_Double
+public class Weight extends SDouble
 {
-	public Weight(double entry) {
+	public Weight() {
 		super("Weight", "lbs.");
-		SetData_Entry(entry);
+	}
+	public Weight(double o) {
+		super(o, "Weight", "lbs.");
 	}
 }

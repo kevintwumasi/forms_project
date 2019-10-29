@@ -1,4 +1,4 @@
-public class Fitness extends Menu
+public class Fitness extends Menu_Abstract
 {
 	private Menu_Entry Editor = new Menu_Entry("View/Edit User Data");
 	private Menu_Entry Display_Caloric = new Menu_Entry("Daily Caloric Requirements");
@@ -20,9 +20,9 @@ public class Fitness extends Menu
 	}
 
 	public void SelectMenu(int choice, UserData z) {
-		Editor a = new Editor();
+		//Editor a = new Editor();
 		switch (choice) {
-			case 1:	a.Menu_Main(z);
+			case 1:	//a.Menu_Main(z);
 				break;
 			case 2:	System.out.println("Display Caloric (NI)");
 				break;
