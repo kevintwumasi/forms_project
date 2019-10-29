@@ -67,6 +67,24 @@ public class UserData
 		}
 		return temp;
 	}
+
+	public ArrayList<Data> GetUserData() {
+		ArrayList<Data> temp = new ArrayList<Data>();
+		for (Data o : ListData_Int) {
+			temp.add(o);
+		}
+		for (Data o : ListData_Double) {
+			temp.add(o);
+		}
+		for (Data o : ListData_Lifts) {
+			temp.add(o);
+		}
+		for (Data o : ListData_String) {
+			temp.add(o);
+		}
+		return temp;
+	}
+
 	// set methods
 	public void SetData_Entry(Data_Int o, int Data_Entry) {
 		o.SetData_Entry(Data_Entry);
