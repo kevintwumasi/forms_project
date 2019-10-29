@@ -10,9 +10,6 @@ abstract class Lifts extends Data_Int
 	public double GetLifts_Weight() {
 		return weight.GetData_Entry();
 	}
-	public String GetLifts_Units() {
-		return weight.GetData_Units();
-	}
 	// set methods
 	public void SetLifts_Weight(double weight) {
 		this.weight.SetData_Entry(weight);

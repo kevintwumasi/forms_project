@@ -1,0 +1,10 @@
+JAVAC = /usr/bin/javac
+JAVAE = /usr/bin/java
+BIN = bin
+JFLAGS = -cp .:Data.jar
+all	:	*.java *.jar
+	${JAVAC} ${JFLAGS} $? -d ${BIN}
+
+test	:
+	cd ${BIN} ; \
+		${JAVAE} Main;

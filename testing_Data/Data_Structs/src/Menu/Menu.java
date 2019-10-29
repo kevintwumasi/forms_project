@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.ArrayList
 import java.util.Scanner;
 
 abstract class Menu {
@@ -42,6 +42,7 @@ abstract class Menu {
 	}
 	// select methods
 	public boolean SelectMenu_Bool(int choice) {
+		ClearScreen();
 		if (choice >= 0 && choice < Menu_List.size()) {
 			return true;
 		} else {
@@ -70,5 +71,10 @@ abstract class Menu {
 		       choice = SelectMenu_Scanner();
 		       SelectMenu(choice, z);
 	       }
+	}
+	// misc methods
+	protected static void ClearScreen() {
+		System.out.print("\033[H\033[2J");
+		System.out.flush();  
 	}
 }
