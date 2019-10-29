@@ -1,8 +1,0 @@
-public class Deadlifts extends Data_Int
-{
-	Weight weight;
-	public Deadlifts(int entry, int weight) {
-		super("Deadlifts");
-		this.weight = new Weight(weight);
-	}
-}

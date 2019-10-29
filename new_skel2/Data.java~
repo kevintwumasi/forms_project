@@ -33,7 +33,7 @@ public class Data extends Menu
 	public double GetData_Input() {
 		int choice = SelectMenu();
 		if (SelectMenu_0(choice)) {
-			//System.out.println(Data_Input.get(choice) + " was extracted from " + choice);
+			System.out.println(Data_Input.get(choice) + " was extracted from " + choice);
 			return Data_Input.get(choice);
 		} else {
 			return nullVal;
@@ -65,9 +65,9 @@ public class Data extends Menu
 	private boolean SetData(double newValue, int choice) {
 		if (SetData_Signed(newValue)) {
 			Data_Input.set(choice, newValue);
-			//System.out.println("You put " +
-			//	newValue + " in " +
-			//	Data_Input_Legend.get(choice));
+			System.out.println("You put " +
+				newValue + " in " +
+				Data_Input_Legend.get(choice));
 			if (Data_Input_Legend.get(choice).equals("Weight")) {
 				;
 			}

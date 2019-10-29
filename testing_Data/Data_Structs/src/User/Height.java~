@@ -1,7 +1,0 @@
-public class Height extends Data_Double
-{
-	public Height(double entry) {
-		super("Height", "lbs.");
-		SetData_Entry(entry);
-	}
-}

@@ -11,14 +11,14 @@ public class Menu
 		this.MenuTitle = NewMenuTitle;
 	}
 	private void SetMenuContents(ArrayList<String> NewMenuContents) {
-		//System.out.println("Refreshing menu...\n");
+		System.out.println("Refreshing menu...\n");
 		this.MenuContents = NewMenuContents;
 		if (modLock == 0) {
 			this.MenuContents.add(0, "to quit the current menu.");
 			modLock = 1;
 		}
 		SetMenuRange();
-		//System.out.println("Menu has been refreshed...\n");
+		System.out.println("Menu has been refreshed...\n");
 	}
 	private void SetMenuRange() {
 		this.MenuRange = this.MenuContents.size();
@@ -98,7 +98,7 @@ public class Menu
 		if (choice != 0) {
 			return true;
 		} else {
-			//System.out.println("Cancelling Operation...");
+			System.out.println("Cancelling Operation...");
 			return false;
 		}
 	}
@@ -111,6 +111,6 @@ public class Menu
 	}
 	// debug
 	public void pdb() {
-		//System.out.println("Debugging...");
+		System.out.println("Debugging...");
 	}
 }

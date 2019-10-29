@@ -1,8 +1,0 @@
-public class Gender extends Data_Int
-{
-	public Gender(int choice) {
-		super(Gender);
-		SetData_Entry(choice);
-	}
-}
-

@@ -1,0 +1,7 @@
+JAVAC = javac
+JAVAE = java
+BINPATH = ./bin
+all	:	*.java
+	${JAVAC} $? -d bin;
+test	:
+	${JAVAE} ${BINPATH}/FitnessApp;

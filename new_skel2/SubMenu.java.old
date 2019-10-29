@@ -1,0 +1,12 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SubMenu extends Menu
+{
+	private String SubMenuType = "DEFAULT";
+	private String SubMenuTitle = "This is the " + SubMenuType + " Menu.\n";
+
+	public SubMenu(ArrayList<String> SubMenuEntries, String SubMenuType) {
+		SetMenuAll
+
+}
