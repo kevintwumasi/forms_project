@@ -30,10 +30,8 @@ abstract class Struct
 		return this.Struct_Lock;
 	}
 	// set methods
-	protected void SetEntry() {
-		this.Struct_Entry = Scan_Input();
-	}
-	private void SetEntry(Object o) {
+	abstract boolean CC(Object o);
+	protected void SetEntry(Object o) {
 		this.Struct_Entry = o;
 	}
 	private void SetType(String Type) {
@@ -50,6 +48,7 @@ abstract class Struct
 		this.Struct_Lock = true;
 	}
 	// scanner methods
+	/*
 	public Object Scan_Input() {
 		Scanner temp = new Scanner(System.in);
 		return (temp.next());
@@ -110,4 +109,5 @@ abstract class Struct
 			return false;
 		}
 	}
+	*/
 }

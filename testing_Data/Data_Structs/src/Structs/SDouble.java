@@ -6,4 +6,12 @@ abstract class SDouble extends Struct
 	public SDouble(double o, String Type, String Units) {
 		super(o, Type, Units);
 	}
+	protected boolean CC(Object o) {
+		if (o instanceof Double) {
+			super.SetEntry(o);
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
