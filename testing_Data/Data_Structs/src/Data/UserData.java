@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 public class UserData 
 {
 	// SInt
@@ -54,12 +55,48 @@ public class UserData
 		return temp;
 	}
 	
-	// set methods
+	// set methods main
 	public void SetEntry(int choice) {
-		GetData().get(choice).SetEntry();
+		Struct s = GetData_Var(choice);
+		while (true) {
+			Scanner scan = new Scanner(System.in);
+			String input = scan.next();
+			if (s.SE(input)) {
+				break;
+			} else {
+				System.out.println("Invalid input");
+			}
+		}
 	}
+
+
+	/*
+	private boolean CCInt(Struct o) {
+		if (o instanceof SInt) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	private boolean CCDouble(Struct o) {
+		if (o instanceof SDouble) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	private boolean CCString(Struct o) {
+		if (o instanceof SString) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	*/
 	// init methods
-	public void Init_Data() {
+	private void Init_Data() {
 		for (Struct o : List_Int) {
 			this.ArrayData.add(o);
 		} 

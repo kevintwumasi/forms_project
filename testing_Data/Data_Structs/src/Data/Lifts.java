@@ -21,7 +21,7 @@ abstract class Lifts extends SInt
 		return (String) weight.GetUnits();
 	}
 	// set weight
-	protected void SetWeight() {
-		weight.SetEntry();
+	protected void SetWeight(Object o) {
+		weight.SetEntry(o);
 	}
 }

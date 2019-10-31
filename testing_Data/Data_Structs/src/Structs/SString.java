@@ -1,16 +1,28 @@
 abstract class SString extends Struct
 {
+	private String heap;
 	public SString(String Type, String Units) {
 		super(Type, Units);
 	}
 	public SString(String o, String Type, String Units) {
 		super(o, Type, Units);
 	}
-	protected boolean CC(Object o) {
-		if (o instanceof String) {
-			super.SetEntry(o);
+	protected boolean SE(Object o) {
+		if (CT(o) && CC(o)) {
+			super.SetEntry(this.heap);
 			return true;
 		} else {
+			return false;
+		}
+	}
+	protected boolean CC(Object o) {
+		return true;
+	}
+	protected boolean CT(Object o) {
+		try {
+			this.heap = (String) o;
+			return true;
+		} catch (Exception e) {
 			return false;
 		}
 	}

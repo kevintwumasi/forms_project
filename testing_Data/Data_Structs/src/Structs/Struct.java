@@ -1,4 +1,4 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 abstract class Struct
 {
 	private Object Struct_Entry = null;
@@ -30,7 +30,7 @@ abstract class Struct
 		return this.Struct_Lock;
 	}
 	// set methods
-	abstract boolean CC(Object o);
+	abstract boolean SE(Object o);
 	protected void SetEntry(Object o) {
 		this.Struct_Entry = o;
 	}
@@ -47,67 +47,33 @@ abstract class Struct
 	private void SetLock() {
 		this.Struct_Lock = true;
 	}
-	// scanner methods
-	/*
-	public Object Scan_Input() {
-		Scanner temp = new Scanner(System.in);
-		return (temp.next());
-	}
-	// type checking
-	public boolean TCInt(Object o) {
-		if (o instanceof Integer) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+	// other
+	abstract boolean CC(Object o);
+	abstract boolean CT(Object o);
 
-	public boolean TCDouble(Object o) {
-		if (o instanceof Double) {
+	// large class condition types
+	protected boolean IsPositive(double o) {
+		if (o >= 0) {
 			return true;
 		} else {
+			System.out.println("Value must be 0 or higher...");
 			return false;
 		}
 	}
-
-	public boolean TCString(Object o) {
-		if (o instanceof String) {
+	protected boolean Is0_1(double o) {
+		if (o >= 0 && o <= 1) {
 			return true;
 		} else {
+			System.out.println("Value must be between 0 and 1...");
 			return false;
 		}
 	}
-	// struct checking
-	public boolean SCInt(Object o) {
-		if (o instanceof SInt) {
+	protected boolean IsNot0 (double o) {
+		if (o != 0) {
 			return true;
 		} else {
+			System.out.println("Value must not be 0...");
 			return false;
 		}
 	}
-
-	public boolean SCDouble(Object o) {
-		if (o instanceof SDouble) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	public boolean SCString(Object o) {
-		if (o instanceof SString) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	public boolean SCLifts(Object o) {
-		if (o instanceof Lifts) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	*/
 }

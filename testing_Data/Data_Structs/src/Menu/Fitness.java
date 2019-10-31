@@ -20,9 +20,9 @@ public class Fitness extends Menu_Abstract
 	}
 
 	public void SelectMenu(int choice, UserData z) {
-		//Editor a = new Editor();
+		Editor a = new Editor();
 		switch (choice) {
-			case 1:	//a.Menu_Main(z);
+			case 1:	a.Menu_Main(z);
 				break;
 			case 2:	System.out.println("Display Caloric (NI)");
 				break;
