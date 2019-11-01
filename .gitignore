@@ -1,0 +1,12 @@
+*.*
+test.java
+!Makefile
+!*.java
+*~
+Old
+etc
+bin
+!*.pdf
+!.gitignore
+!*.tex
+!*.sty
