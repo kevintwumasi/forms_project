@@ -1,2 +1,3 @@
+PDFBIN = pdflatex
 all	:	Documentation.tex
-	pdflatex $?
+	${PDFBIN} $?

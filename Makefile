@@ -19,6 +19,10 @@ all	:
 	cd Menu; \
 		make ; \
 		cd .. ;
+	##
+	cd Docs; \
+		make ; \
+		cd ..;
 test	:
 	cd ${BIN}; \
 		${JAVAE} Main;
