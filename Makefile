@@ -1,10 +1,24 @@
-JCBIN = /usr/bin/javac
-JBIN = /usr/bin/java
-JFLAGS = -cp .
-JEFLAGS = org.junit.runner.JUnitCore
-JTFILES = :junit-4.12.jar:hamcrest-core-1.3.jar 
-all	:	*.java
-	${JCBIN} ${JFLAGS}${JTFILES} $?
-test	:	
-	${JBIN} StrengthStandard
-
+JAVAE = /usr/bin/java
+BIN = bin
+all	:
+	if [ ! -d ${BIN} ]; then \
+		mkdir ${BIN}; \
+		fi
+	cd Structs; \
+		make; \
+		cd .. ;
+	##
+	cd Data; \
+		make ; \
+		cd .. ;
+	##
+	cd Calc; \
+		make ; \
+		cd ..;
+	##
+	cd Menu; \
+		make ; \
+		cd .. ;
+test	:
+	cd ${BIN}; \
+		${JAVAE} Main;

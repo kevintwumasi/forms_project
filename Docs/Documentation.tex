@@ -1,0 +1,78 @@
+\documentclass{book}
+\usepackage{tikz-cd}
+\usepackage{comment}
+\title{Fitness App \\ \small{Version 0.1}}
+\author{Melissa H., Kirk E., Kevin T., \\
+Imran M., J. Patrick C.}
+\newcommand{\code}[1]{#1}
+\newcommand{\method}[1]{#1}
+\newcommand{\object}[2]{\item[\textbf{#1}\ : \textit{#2}]}
+%% \newenvironment
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter{Introduction}
+The application, Fitness App, is made for the group project component for CPSC 233 Fall 2019 of the University of Calgary. This application has the following features implemented, or to be implemented.
+\begin{enumerate}
+	\item Track Fitness -- Tracking the following items over time and have an interface to view a time graph.
+	\begin{enumerate}
+		\item Track Weight
+		\item Track Lifts
+	\end{enumerate}
+	\item View Insights -- Contains calculations and User supplied data and computed variables for recommendations. 
+	\begin{enumerate}
+		\item User Data -- Includes Gender, Height, Weight, Body Fat \%, Activity Level, Steps, Resting BPM, Lfits (Bench, Deadlift, Squats), and other data.
+		\item Fitness Dashboard -- Displays user data and calculations for recommended activities to regulate user health, either for the short term or long term. Also includes an editor for the User Data. Activities that are calculated and returned to the user include:
+		\begin{enumerate}
+			\item Daily Caloric requirements
+			\item Basal Metabolic Rate
+			\item Fat Free Mass Index
+			\item VO2 Max
+			\item BMI
+			\item Lifting Stats
+		\end{enumerate}
+	\end{enumerate}
+\end{enumerate}
+\section{Classes}
+There will be several classes that are split up into small classes to support the program.
+\begin{itemize}
+	\item Strucs -- Data Types that holds and governs User Data. These are all abstract classes that support the Calc and Data classes. It includes Type checking to ensure that inputted data is correct. These are subsets of the Integer, String, and Double classes. Compound Data Types will be implemented for Data/Date relations later.
+	\item Data -- List of User variables defined under the Fitness Dashboard. This includes also an interface to edit and get user data.
+	\item Calc -- Classes that compute user data defined in Data.
+	\item Menu -- Holds the classes that generate the text user interface. Will possibly be able to integrate into the GUI class later.
+	\item Docs -- Contains the source code for this documentation.
+\end{itemize}
+The interaction of each classes is as follows: \\
+\begin{center}
+\begin{tikzcd}
+	& Calc \arrow[rd] \arrow[d] & \\
+	Struct \arrow[r] \arrow[ru] & Menu \arrow[r] & Menu \arrow[d] \\
+	& & GUI \\
+\end{tikzcd}
+\end{center}
+
+\chapter{Structs}
+Not a very creative name, but however it provides the foundation for all the data entered into the app.
+\section{\code{Struct.java}}
+The core of all data structures in the program.
+\begin{comment}
+\begin{itemize} 
+	\object{Struct\_Entry}{Object} Holds all the values of the data.
+	\object{Struct\_Type}{String} What is the characteristic that describes the object. E.g. Weight, Height, etc.
+	\object{Struct\_Units}{String} The units of the type.
+	\object{Struct\_Lock}{Boolean} Locks the type and units of the data from modification.
+	\item[] \\
+	\constructor{Struct}{
+\end{itemize}
+\end{comment}
+
+\chapter{Data}
+
+\chapter{Calc}
+
+\chapter{Menu}
+
+\chapter{GUI}
+
+\chapter{TODO}
+\end{document}
