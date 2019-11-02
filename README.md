@@ -52,6 +52,11 @@ Age D C B A A+ 20 - 29 <= 41 42 - 45 46 - 50 51 - 55 56+ 30 - 39 <= 40 41 - 43 4
 
 Strength Standards - Currently HFA can give you insights based on your 1-rep max bench press. Your lift will be compared against data from millions of other lifters, and a percentile will be calculated to give you an idea of where you stand amongst others of similar gender, weight, etc.
 
+GUI:
+
+The GUI as of Demo 2 consists of the majority of the screens that a user will be able to go through by the end of this project. It currently prompts users to select between new user or current user. A proposed menu for login will be discussed for implementation in future versions. Currently the data inputs aren't implemented in any widgets/buttons but will be functioning in future versions.
+Merging the calculations and various other classes will be implemented later on. 
+
 sources:
 
 http://www.shapesense.com/fitness-exercise/articles/vo2-and-vo2max.shtml#what-are-normal-vo2max-values https://www.calculators.org/health/ffmi.php https://www.calculators.org/health/bmi.php
